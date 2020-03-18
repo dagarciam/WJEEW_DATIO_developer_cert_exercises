@@ -15,6 +15,7 @@ mvn clean install
 
 Streaming jobs needs to set the `duration` parameter (In main class DeveloperCertExercises) for a success compilation.
 
+
 The testAT are commented, for run testAT uncomment the next line in `RunCukesTest.scala` file
 ```
 @CucumberOptions(features = Array(
@@ -29,6 +30,5 @@ Go to your IDE run configurations window and set the next configuration:
 * Set the next VM Option =>  `-Dspark.master=local[*]`
 * Set the main class => `com.bbva.datioamproduct.fdevdatio.DeveloperCertExercises`
 * Set as program argument a valid path to a configuration file (not empty)
-
 
 Generated with spark-job-archetype version 1.0.4

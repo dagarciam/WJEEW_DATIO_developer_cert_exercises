@@ -12,31 +12,28 @@ import org.apache.spark.sql.SparkSession
   * Configuration for this class should be expressed in HOCON like this:
   *
   * DeveloperCertExercises {
-  *   ...
+  * ...
   * }
   *
   */
 protected trait DeveloperCertExercisesTrait extends InitSpark {
   this: InitSpark =>
-    /**
-      * @param spark Initialized SparkSession
-      * @param config Config retrieved from args
-      */
-    override def runProcess(spark : SparkSession, config : Config): Int = {
+  /**
+    * @param sparkS Initialized SparkSession
+    * @param config Config retrieved from args
+    */
+  override def runProcess(sparkS: SparkSession, config: Config): Int = {
 
-      this.logger.info("Init process DeveloperCertExercises")
+    val exitCode = 0
 
-      val exitCode = 0
+    exitCode
 
-      exitCode
-
-    }
+  }
 
   override def defineBusinessInfo(config: Config): BusinessInformation =
     BusinessInformation(exitCode = 0, entity = "", path = "", mode = "",
-                        schema = "", schemaVersion = "", reprocessing = "")
+      schema = "", schemaVersion = "", reprocessing = "")
 
 }
 
 object DeveloperCertExercises extends DeveloperCertExercisesTrait with InitSpark
-

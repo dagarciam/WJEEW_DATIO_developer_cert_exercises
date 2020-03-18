@@ -11,10 +11,9 @@ pipeline {
                 script{
                     globalBootstrap {
                         libraryName   = "datio-workflowlibs"
-                        libraryBranch = "master"
-
+                        libraryBranch = "master-mad"
                         entrypointParams = [
-                                project_type: "DEV"
+                                "logLevel": "DEBUG"
                         ]
                     }
                 }
