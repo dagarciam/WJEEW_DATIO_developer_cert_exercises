@@ -25,7 +25,8 @@ protected trait DeveloperCertExercisesTrait extends InitSpark {
     override def runProcess(spark : SparkSession, config : Config): Int = {
 
       this.logger.info("Init process DeveloperCertExercises")
-
+      val prueba = new Prueba
+      this.logger.info("Hola mundo!")
       val exitCode = 0
 
       exitCode
