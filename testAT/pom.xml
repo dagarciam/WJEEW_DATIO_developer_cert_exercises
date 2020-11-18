@@ -16,7 +16,19 @@
     <name>fdevdatio-developercertexercises Acceptance Tests</name>
 
     <dependencies>
-        <!--Tests-->
+        <!-- Test -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
@@ -32,13 +44,6 @@
             <artifactId>scalatest_${scala.binary.version}</artifactId>
             <scope>test</scope>
         </dependency>
-
-
-        <dependency>
-            <groupId>com.typesafe</groupId>
-            <artifactId>config</artifactId>
-        </dependency>
-        <!-- Used in apache spark docker image-->
         <dependency>
             <groupId>com.datio.spark.bdt</groupId>
             <artifactId>spark-bdt</artifactId>

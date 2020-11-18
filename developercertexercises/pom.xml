@@ -17,6 +17,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.datio.spark</groupId>
+            <artifactId>utils</artifactId>
+            <version>${datio-spark-utils.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scala.binary.version}</artifactId>
             <scope>provided</scope>
@@ -26,25 +31,28 @@
             <artifactId>spark-sql_${scala.binary.version}</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
         <!-- Test -->
         <dependency>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_${scala.binary.version}</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.typesafe.scala-logging</groupId>
-            <artifactId>scala-logging_${scala.binary.version}</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.datio.spark</groupId>
-            <artifactId>utils</artifactId>
-            <version>${datio-spark-utils.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.datio.spark</groupId>
-            <artifactId>tests</artifactId>
-            <version>${datio-spark-tests.version}</version>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_${scala.binary.version}</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -112,5 +120,6 @@
             </dependencies>
         </profile>
     </profiles>
+
 
 </project>
