@@ -6,6 +6,7 @@ import com.datio.spark.metric.model.BusinessInformation
 import com.typesafe.config.Config
 import org.apache.spark.sql.SparkSession
 import com.bbva.datioamproduct.fdevdatio.common.Constants.{FAILURE_EXITCODE, SUCCESS_EXITCODE}
+import com.bbva.datioamproduct.fdevdatio.engine.AmazonAnalitycs
 import org.apache.spark.SparkContext
 
 import scala.util.{Failure, Success, Try}
@@ -30,9 +31,8 @@ protected trait DeveloperCertExercisesTrait extends InitSpark {
   override def runProcess(spark: SparkSession, config: Config): Int = {
 
     Try {
-      val sc: SparkContext = spark.sparkContext
-      val rdds: RDDs = new RDDs(sc, config)
-      rdds()
+      val engine: AmazonAnalitycs = new AmazonAnalitycs(config)(spark)
+      engine()
     } match {
       case Success(_) => SUCCESS_EXITCODE
       case Failure(exception) => {
